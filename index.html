@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <script
+      src="https://kit.fontawesome.com/28bef5c40e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@300&family=Roboto+Slab:wght@300;400&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="btn-group me-2" role="group" aria-label="First group">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          id="convert-celsius"
+        >
+          °c
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          id="convert-fahrenheit"
+        >
+          °f
+        </button>
+      </div>
+      <i class="fas fa-cloud-showers-heavy current-icon"></i>
+      <h1 id="current-city"></h1>
+      <div class="row">
+        <div class="col-6 current-day" id="current-day"></div>
+        <div class="col-6 current-word">currently</div>
+        <div class="col-6 current-time" id="current-time"></div>
+        <div class="col-6 current-desc" id="current-desc"></div>
+      </div>
+      <div class="row">
+        <div class="col-6 current-temp" id="current-temp">°c</div>
+        <div class="col-6 current-details">
+          wind <span id="wind-speed"></span>km/h
+        </div>
+        <div class="col-6 current-min-max" id="current-min-max"></div>
+        <div class="col-6 current-details">
+          humidity <span id="humidity"></span>%
+        </div>
+      </div>
+      <hr />
+      <p class="forecast">forecast</p>
+      <div class="row">
+        <div class="col-4 forecast-day">Monday</div>
+        <div class="col-4 forecast-icon"><i class="fas fa-cloud"></i></div>
+        <div class="col-4 forecast-min-max">10°c / 12°c</div>
+        <div class="col-4 forecast-day">Tuesday</div>
+        <div class="col-4 forecast-icon"><i class="fas fa-bolt"></i></div>
+        <div class="col-4 forecast-min-max">12°c / 15°c</div>
+        <div class="col-4 forecast-day">Wednesday</div>
+        <div class="col-4 forecast-icon">
+          <i class="fas fa-cloud-showers-heavy"></i>
+        </div>
+        <div class="col-4 forecast-min-max">14°c / 16°c</div>
+        <div class="col-4 forecast-day">Thursday</div>
+        <div class="col-4 forecast-icon">
+          <i class="fas fa-cloud-sun-rain"></i>
+        </div>
+        <div class="col-4 forecast-min-max">14°c / 16°c</div>
+        <div class="col-4 forecast-day">Friday</div>
+        <div class="col-4 forecast-icon"><i class="fas fa-cloud-sun"></i></div>
+        <div class="col-4 forecast-min-max">13°c / 15°c</div>
+      </div>
+
+      <form id="city-search">
+        <input
+          id="city-name"
+          type="text"
+          class="search-bar"
+          autocomplete="off"
+          placeholder="Search for a city"
+        />
+        <input type="submit" class="search-button" value="Go" />
+      </form>
+      <form id="current-loc">
+        <input type="submit" class="current-loc" value="Use current location" />
+      </form>
+      <p class="footer">
+        Coded by
+        <a
+          class="contact"
+          href="https://www.linkedin.com/in/chelsey-watson-7ab824177"
+          target="_blank"
+          >Chelsey Watson</a
+        >
+      </p>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+body {
+  background: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/014/459/original/cloud-background.jpg?1627885622");
+  padding: 40px;
+}
+
+.container {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 800px;
+}
+div {
+  display: block;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+}
+h1 {
+  color: #013d58;
+  font-family: "Staatliches", cursive;
+  font-size: 68px;
+  text-align: center;
+  transition: all 200ms ease-in-out;
+}
+
+h1:hover {
+  color: #0081bc;
+}
+
+i {
+  transition: all 200ms ease-in-out;
+}
+
+i:hover {
+  color: #013d58;
+}
+hr {
+  display: block;
+  margin: 0 auto;
+  max-width: 32%;
+}
+
+form {
+  padding: 6px 0px;
+  font-size: 14px;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+a:hover {
+  color: #013d58;
+}
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.btn-group {
+  display: block;
+  padding: 15px;
+  text-align: right;
+}
+.current-icon {
+  color: #0081bc;
+  font-size: 78px;
+  padding: 15px 0px;
+}
+.forecast-icon {
+  color: #0081bc;
+  font-size: 24px;
+}
+
+.current-word,
+.current-desc,
+.forecast {
+  font-weight: bolder;
+  font-size: 16px;
+}
+.row {
+  line-height: 32px;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 5px 0px;
+}
+.col-4 {
+  line-height: 32px;
+}
+
+.forecast-day,
+.current-temp,
+.current-min-max,
+.current-day,
+.current-time {
+  text-align: right;
+}
+
+.current-day,
+.current-temp,
+.current-time {
+  font-size: 32px;
+  font-weight: bold;
+}
+.forecast-min-max,
+.current-details,
+.current-word,
+.current-desc {
+  text-align: left;
+}
+.footer {
+  font-family: monospace;
+  font-size: 11px;
+  padding: 30px 0px;
+}
+#city-search {
+  margin-top: 20px;
+}
