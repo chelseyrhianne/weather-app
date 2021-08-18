@@ -67,6 +67,9 @@ hr {
   padding: 15px;
   text-align: right;
 }
+.active {
+  font-weight: bold;
+}
 .current-icon {
   color: #0081bc;
   font-size: 78px;

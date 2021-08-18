@@ -56,13 +56,13 @@ function showLocation(response) {
 }
 
 function showWeather(response) {
-  let minTemp = Math.round(response.data.main.temp_min);
-  let maxTemp = Math.round(response.data.main.temp_max);
-  let temperature = Math.round(response.data.main.temp);
+  celsiusMinTemperature = Math.round(response.data.main.temp_min);
+  celsiusMaxTemperature = Math.round(response.data.main.temp_max);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let minMaxTempDisplay = document.querySelector("#current-min-max");
   let tempDisplay = document.querySelector("#current-temp");
-  minMaxTempDisplay.innerHTML = `${minTemp}°c / ${maxTemp}°c`;
-  tempDisplay.innerHTML = `${temperature}°c`;
+  minMaxTempDisplay.innerHTML = `${celsiusMinTemperature}° / ${celsiusMaxTemperature}°`;
+  tempDisplay.innerHTML = `${celsiusTemperature}°`;
   showDescription(response);
   showWindSpeed(response);
   showHumidity(response);
@@ -97,19 +97,30 @@ function showIcon(response) {
 
 function convertCelsius(event) {
   event.preventDefault();
-  let currentTempMin = document.querySelector("#min-temp");
-  let currentTempMax = document.querySelector("#max-temp");
-  currentTempMin.innerHTML = "9°c /";
-  currentTempMax.innerHTML = "11°c";
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  document.querySelector("#current-temp").innerHTML = `${celsiusTemperature}°`;
+  document.querySelector(
+    "#current-min-max"
+  ).innerHTML = `${celsiusMinTemperature}° / ${celsiusMaxTemperature}°`;
 }
 function convertFahrenheit(event) {
   event.preventDefault();
-  let currentTempMin = document.querySelector("#min-temp");
-  let currentTempMax = document.querySelector("#max-temp");
-  let minFahrenheit = Math.round(9 * 1.8 + 32);
-  let maxFarenheit = Math.round(11 * 1.8 + 32);
-  currentTempMin.innerHTML = `${minFahrenheit}°f /`;
-  currentTempMax.innerHTML = `${maxFarenheit}°f`;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let fahrenheitMinTemperature = Math.round(
+    (celsiusMinTemperature * 9) / 5 + 32
+  );
+  let fahrenheitMaxTemperature = Math.round(
+    (celsiusMaxTemperature * 9) / 5 + 32
+  );
+  document.querySelector(
+    "#current-temp"
+  ).innerHTML = `${fahrenheitTemperature}°`;
+  document.querySelector(
+    "#current-min-max"
+  ).innerHTML = `${fahrenheitMinTemperature}° / ${fahrenheitMaxTemperature}°`;
 }
 
 let day = document.querySelector("#current-day");
@@ -124,10 +135,14 @@ city.addEventListener("submit", handleSubmit);
 let currentLoc = document.querySelector("#current-loc");
 currentLoc.addEventListener("submit", useLocation);
 
-let celsius = document.querySelector("#convert-celsius");
-celsius.addEventListener("click", convertCelsius);
+let celsiusLink = document.querySelector("#convert-celsius");
+celsiusLink.addEventListener("click", convertCelsius);
 
-let fahrenheit = document.querySelector("#convert-fahrenheit");
-fahrenheit.addEventListener("click", convertFahrenheit);
+let celsiusTemperature = null;
+let celsiusMinTemperature = null;
+let celsiusMaxTemperature = null;
+
+let fahrenheitLink = document.querySelector("#convert-fahrenheit");
+fahrenheitLink.addEventListener("click", convertFahrenheit);
 
 search("London");

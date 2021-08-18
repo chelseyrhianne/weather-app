@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
+    <link
+      rel="icon"
+      href="https://image.flaticon.com/icons/png/128/1163/1163675.png"
+    />
     <script
       src="https://kit.fontawesome.com/28bef5c40e.js"
       crossorigin="anonymous"
@@ -34,14 +38,14 @@
       <div class="btn-group me-2" role="group" aria-label="First group">
         <button
           type="button"
-          class="btn btn-outline-secondary"
+          class="btn btn-light btn-sm active"
           id="convert-celsius"
         >
           °c
         </button>
         <button
           type="button"
-          class="btn btn-outline-secondary"
+          class="btn btn-light btn-sm"
           id="convert-fahrenheit"
         >
           °f
@@ -56,7 +60,7 @@
         <div class="col-6 current-desc" id="current-desc"></div>
       </div>
       <div class="row">
-        <div class="col-6 current-temp" id="current-temp">°c</div>
+        <div class="col-6 current-temp" id="current-temp"></div>
         <div class="col-6 current-details">
           wind <span id="wind-speed"></span>km/h
         </div>
@@ -70,23 +74,23 @@
       <div class="row">
         <div class="col-4 forecast-day">Monday</div>
         <div class="col-4 forecast-icon"><i class="fas fa-cloud"></i></div>
-        <div class="col-4 forecast-min-max">10°c / 12°c</div>
+        <div class="col-4 forecast-min-max">10° / 12°</div>
         <div class="col-4 forecast-day">Tuesday</div>
         <div class="col-4 forecast-icon"><i class="fas fa-bolt"></i></div>
-        <div class="col-4 forecast-min-max">12°c / 15°c</div>
+        <div class="col-4 forecast-min-max">12° / 15°</div>
         <div class="col-4 forecast-day">Wednesday</div>
         <div class="col-4 forecast-icon">
           <i class="fas fa-cloud-showers-heavy"></i>
         </div>
-        <div class="col-4 forecast-min-max">14°c / 16°c</div>
+        <div class="col-4 forecast-min-max">14° / 16°</div>
         <div class="col-4 forecast-day">Thursday</div>
         <div class="col-4 forecast-icon">
           <i class="fas fa-cloud-sun-rain"></i>
         </div>
-        <div class="col-4 forecast-min-max">14°c / 16°c</div>
+        <div class="col-4 forecast-min-max">14° / 16°</div>
         <div class="col-4 forecast-day">Friday</div>
         <div class="col-4 forecast-icon"><i class="fas fa-cloud-sun"></i></div>
-        <div class="col-4 forecast-min-max">13°c / 15°c</div>
+        <div class="col-4 forecast-min-max">13° / 15°</div>
       </div>
 
       <form id="city-search">
