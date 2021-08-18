@@ -66,6 +66,7 @@ function showWeather(response) {
   showDescription(response);
   showWindSpeed(response);
   showHumidity(response);
+  showIcon(response);
 }
 
 function showDescription(response) {
@@ -84,6 +85,16 @@ function showHumidity(response) {
     response.data.main.humidity
   );
 }
+
+function showIcon(response) {
+  let iconElement = document.querySelector("#current-icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
 function convertCelsius(event) {
   event.preventDefault();
   let currentTempMin = document.querySelector("#min-temp");
