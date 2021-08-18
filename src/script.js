@@ -15,7 +15,7 @@ function formatDay(now) {
 }
 
 function formatTime(now) {
-  let hour = now.getHours();
+  let hour = ("0" + now.getHours()).slice(-2);
   let minutes = ("0" + now.getMinutes()).slice(-2);
   let newTime = `${hour}:${minutes}`;
   return newTime;
