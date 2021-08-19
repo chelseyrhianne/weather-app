@@ -62,7 +62,7 @@ function showWeather(response) {
   let minMaxTempDisplay = document.querySelector("#current-min-max");
   let tempDisplay = document.querySelector("#current-temp");
   minMaxTempDisplay.innerHTML = `${celsiusMinTemperature}° / ${celsiusMaxTemperature}°`;
-  tempDisplay.innerHTML = `${celsiusTemperature}°`;
+  tempDisplay.innerHTML = `${celsiusTemperature}°c`;
   showDescription(response);
   showWindSpeed(response);
   showHumidity(response);
@@ -113,7 +113,9 @@ function displayForecast(response) {
         forecastHTML +
         `
     <div class="col-2"> 
-    <div class = "forecast-day">${formatForecastDay(forecastDay.dt)}</div>
+    <div class = "forecast-day"><strong>${formatForecastDay(
+      forecastDay.dt
+    )}</strong></div>
     <img src="http://openweathermap.org/img/wn/${
       forecastDay.weather[0].icon
     }@2x.png" alt="" width="72"/>
@@ -147,34 +149,6 @@ function formatForecastDay(timestamp) {
   return days[day];
 }
 
-function convertCelsius(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  document.querySelector("#current-temp").innerHTML = `${celsiusTemperature}°`;
-  document.querySelector(
-    "#current-min-max"
-  ).innerHTML = `${celsiusMinTemperature}° / ${celsiusMaxTemperature}°`;
-}
-function convertFahrenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
-  let fahrenheitMinTemperature = Math.round(
-    (celsiusMinTemperature * 9) / 5 + 32
-  );
-  let fahrenheitMaxTemperature = Math.round(
-    (celsiusMaxTemperature * 9) / 5 + 32
-  );
-  document.querySelector(
-    "#current-temp"
-  ).innerHTML = `${fahrenheitTemperature}°`;
-  document.querySelector(
-    "#current-min-max"
-  ).innerHTML = `${fahrenheitMinTemperature}° / ${fahrenheitMaxTemperature}°`;
-}
-
 let day = document.querySelector("#current-day");
 day.innerHTML = formatDay(new Date());
 
@@ -186,15 +160,5 @@ city.addEventListener("submit", handleSubmit);
 
 let currentLoc = document.querySelector("#current-loc");
 currentLoc.addEventListener("submit", useLocation);
-
-let celsiusLink = document.querySelector("#convert-celsius");
-celsiusLink.addEventListener("click", convertCelsius);
-
-let celsiusTemperature = null;
-let celsiusMinTemperature = null;
-let celsiusMaxTemperature = null;
-
-let fahrenheitLink = document.querySelector("#convert-fahrenheit");
-fahrenheitLink.addEventListener("click", convertFahrenheit);
 
 search("London");
