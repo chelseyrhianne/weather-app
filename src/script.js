@@ -67,7 +67,7 @@ function showWeather(response) {
   showWindSpeed(response);
   showHumidity(response);
   showIcon(response);
-  displayForecast(response);
+  getForecast(response.data.coord);
 }
 
 function showDescription(response) {
@@ -96,7 +96,14 @@ function showIcon(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function displayForecast() {
+function getForecast(coordinates) {
+  let units = "metric";
+  let apiKey = "79c697bee7cb8b155a2b7ddf63fb1c8a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
