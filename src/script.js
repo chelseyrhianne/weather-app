@@ -23,10 +23,10 @@ function formatTime(now) {
 }
 function updateBackground(hour) {
   let body = document.querySelector("body");
-  if (hour > 05 && hour < 10) body.classList.add("morning");
-  else if (hour > 10 && hour < 18) body.classList.add("day");
-  else if (hour > 18 && hour < 22) body.classList.add("evening");
-  else if (hour > 22 || hour < 05) body.classList.add("night");
+  if (hour >= 05 && hour < 10) body.classList.add("morning");
+  else if (hour >= 10 && hour < 18) body.classList.add("day");
+  else if (hour >= 18 && hour < 22) body.classList.add("evening");
+  else if (hour >= 22 || hour < 05) body.classList.add("night");
 }
 
 function search(city) {
