@@ -1,23 +1,10 @@
-body {
-  background: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/014/459/original/cloud-background.jpg?1627885622");
-  padding: 40px;
-}
-
-.container {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: 900px;
-}
 div {
   display: block;
   font-family: "Karla", sans-serif;
   font-size: 14px;
   margin: 0 auto;
 }
+
 h1 {
   color: #013d58;
   font-family: "Staatliches", cursive;
@@ -55,20 +42,45 @@ hr {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.btn-group {
+
+.morning {
+  background-image: url(images/morning-background.jpg);
+  background-size: cover;
+  padding: 40px;
+}
+
+.day {
+  background-image: url(images/day-background.jpg);
+  background-size: cover;
+  padding: 40px;
+}
+.evening {
+  background-image: url(images/evening-background.jpg);
+  background-size: cover;
+  padding: 40px;
+}
+.night {
+  background-image: url(images/night-background.jpg);
+  background-size: cover;
+  padding: 40px;
+}
+.container {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
   display: block;
-  padding: 15px;
-  text-align: right;
+  margin: 0 auto;
+  text-align: center;
+  width: 900px;
 }
-.active {
-  font-weight: bold;
-}
+
 .current-word,
 .current-desc,
 .forecast-word {
   font-weight: bolder;
   font-size: 16px;
 }
+
 .row {
   line-height: 32px;
   margin: 0 auto;
@@ -89,16 +101,19 @@ hr {
   font-size: 32px;
   font-weight: bold;
 }
+
 .current-details,
 .current-word,
 .current-desc {
   text-align: left;
 }
+
 .footer {
   font-family: monospace;
   font-size: 11px;
   padding: 30px 0px;
 }
+
 #city-search {
   margin-top: 20px;
 }

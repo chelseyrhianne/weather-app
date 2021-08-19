@@ -18,7 +18,15 @@ function formatTime(now) {
   let hour = ("0" + now.getHours()).slice(-2);
   let minutes = ("0" + now.getMinutes()).slice(-2);
   let newTime = `${hour}:${minutes}`;
+  updateBackground(hour);
   return newTime;
+}
+function updateBackground(hour) {
+  let body = document.querySelector("body");
+  if (hour > 05 && hour < 10) body.classList.add("morning");
+  else if (hour > 10 && hour < 18) body.classList.add("day");
+  else if (hour > 18 && hour < 22) body.classList.add("evening");
+  else if (hour > 22 || hour < 05) body.classList.add("night");
 }
 
 function search(city) {
@@ -161,4 +169,6 @@ city.addEventListener("submit", handleSubmit);
 let currentLoc = document.querySelector("#current-loc");
 currentLoc.addEventListener("submit", useLocation);
 
-search("London");
+let body = document.querySelector("body");
+
+search("Auckland");
