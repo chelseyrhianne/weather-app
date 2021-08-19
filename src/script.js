@@ -105,21 +105,46 @@ function getForecast(coordinates) {
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2"> 
-    <div class = "forecast-day">${day}</div>
-    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="72"/>
-    <div class="forecast-min-max">10° / 12°</div>
+    <div class = "forecast-day">${formatForecastDay(forecastDay.dt)}</div>
+    <img src="http://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png" alt="" width="72"/>
+    <div class="forecast-temp"><strong>${Math.round(
+      forecastDay.temp.day
+    )}°</strong></div>
+    <div class="forecast-min-max">${Math.round(
+      forecastDay.temp.min
+    )}° / ${Math.round(forecastDay.temp.max)}°</div>
     </div>
     `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
 }
 
 function convertCelsius(event) {
