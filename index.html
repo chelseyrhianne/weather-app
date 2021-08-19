@@ -69,30 +69,6 @@
           humidity <span id="humidity"></span>%
         </div>
       </div>
-      <hr />
-      <p class="forecast">forecast</p>
-      <div class="row">
-        <div class="col-4 forecast-day">Monday</div>
-        <div class="col-4 forecast-icon"><i class="fas fa-cloud"></i></div>
-        <div class="col-4 forecast-min-max">10° / 12°</div>
-        <div class="col-4 forecast-day">Tuesday</div>
-        <div class="col-4 forecast-icon"><i class="fas fa-bolt"></i></div>
-        <div class="col-4 forecast-min-max">12° / 15°</div>
-        <div class="col-4 forecast-day">Wednesday</div>
-        <div class="col-4 forecast-icon">
-          <i class="fas fa-cloud-showers-heavy"></i>
-        </div>
-        <div class="col-4 forecast-min-max">14° / 16°</div>
-        <div class="col-4 forecast-day">Thursday</div>
-        <div class="col-4 forecast-icon">
-          <i class="fas fa-cloud-sun-rain"></i>
-        </div>
-        <div class="col-4 forecast-min-max">14° / 16°</div>
-        <div class="col-4 forecast-day">Friday</div>
-        <div class="col-4 forecast-icon"><i class="fas fa-cloud-sun"></i></div>
-        <div class="col-4 forecast-min-max">13° / 15°</div>
-      </div>
-
       <form id="city-search">
         <input
           id="city-name"
@@ -106,6 +82,9 @@
       <form id="current-loc">
         <input type="submit" class="current-loc" value="Use current location" />
       </form>
+      <hr />
+      <p class="forecast-word">forecast</p>
+      <div id="forecast"></div>
       <p class="footer">
         <a
           class="contact"

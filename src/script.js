@@ -67,6 +67,7 @@ function showWeather(response) {
   showWindSpeed(response);
   showHumidity(response);
   showIcon(response);
+  displayForecast(response);
 }
 
 function showDescription(response) {
@@ -93,6 +94,25 @@ function showIcon(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2"> 
+    <div class = "forecast-day">${day}</div>
+    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="72"/>
+    <div class="forecast-min-max">10° / 12°</div>
+    </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function convertCelsius(event) {

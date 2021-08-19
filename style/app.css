@@ -10,12 +10,12 @@ body {
   display: block;
   margin: 0 auto;
   text-align: center;
-  width: 800px;
+  width: 900px;
 }
 div {
   display: block;
   font-family: "Karla", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   margin: 0 auto;
 }
 h1 {
@@ -30,13 +30,6 @@ h1:hover {
   color: #0081bc;
 }
 
-i {
-  transition: all 200ms ease-in-out;
-}
-
-i:hover {
-  color: #013d58;
-}
 hr {
   display: block;
   margin: 0 auto;
@@ -70,33 +63,19 @@ hr {
 .active {
   font-weight: bold;
 }
-.current-icon {
-  color: #0081bc;
-  font-size: 78px;
-  padding: 15px 0px;
-}
-.forecast-icon {
-  color: #0081bc;
-  font-size: 24px;
-}
-
 .current-word,
 .current-desc,
-.forecast {
+.forecast-word {
   font-weight: bolder;
   font-size: 16px;
 }
 .row {
   line-height: 32px;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 800px;
   padding: 5px 0px;
 }
-.col-4 {
-  line-height: 32px;
-}
 
-.forecast-day,
 .current-temp,
 .current-min-max,
 .current-day,
@@ -110,7 +89,6 @@ hr {
   font-size: 32px;
   font-weight: bold;
 }
-.forecast-min-max,
 .current-details,
 .current-word,
 .current-desc {
