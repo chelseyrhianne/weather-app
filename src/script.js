@@ -21,6 +21,7 @@ function formatTime(now) {
   updateBackground(hour);
   return newTime;
 }
+
 function updateBackground(hour) {
   let body = document.querySelector("body");
   if (hour >= 05 && hour < 10) body.classList.add("morning");

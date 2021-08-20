@@ -1,3 +1,11 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 div {
   display: block;
   font-family: "Karla", sans-serif;
@@ -6,7 +14,6 @@ div {
 }
 
 h1 {
-  color: #013d58;
   font-family: "Staatliches", cursive;
   font-size: 68px;
   transition: all 200ms ease-in-out;
@@ -15,24 +22,31 @@ h1 {
 h1:hover {
   color: #72b9d5;
 }
+
 h2 {
-  color: #013d58;
   font-family: "Staatliches", cursive;
   font-size: 18px;
 }
+
 h3 {
   font-size: 16px;
 }
+
 hr {
+  color: #d8d8d8;
   display: block;
   margin: 0 auto;
   max-width: 80%;
-  color: #cbf1ff;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 form {
-  padding: 6px 0px;
+  display: inline-block;
+  font-family: "Karla" cursive;
   font-size: 16px;
+  padding: 6px 0px;
+  margin-top: 50px;
 }
 
 a {
@@ -45,27 +59,26 @@ a:hover {
   color: #72b9d5;
 }
 
-hr {
-  margin-top: 15px;
-  margin-bottom: 15px;
+.col-2 {
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
 }
 
-form {
-  display: inline-block;
-  font-family: "Karla" cursive;
-  margin-top: 50px;
+.col-2:hover {
+  background: #fbfeff;
 }
 
 .search-bar {
-  width: 500px;
+  background: #f7f9fc;
+  border-color: #93b8db;
+  border-radius: 4px;
+  border-style: solid 1px;
   height: 40px;
   margin: 5px;
-  padding: 15px 20px;
-  border-color: #93b8db;
-  border-style: solid 1px;
   opacity: 0.5;
-  background: #f7f9fc;
+  padding: 15px 20px;
   transition: all 200ms ease-in-out;
+  width: 500px;
 }
 
 .search-bar:hover {
@@ -98,6 +111,7 @@ form {
   background: #fff;
   border-radius: 15px;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  color: #013d58;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -109,28 +123,18 @@ form {
   margin-top: 20px;
 }
 .headings {
-  text-align: left;
   padding-top: 20px;
+  text-align: left;
 }
 
 .current-details {
-  text-align: right;
-  padding-top: 50px;
   padding-right: 50px;
+  padding-top: 50px;
+  text-align: right;
 }
 
-#current-temp,
-#wind-speed,
-#humidity {
-  font-weight: bold;
-}
-
+.forecast-word,
 #current-desc {
-  color: #013d58;
-  font-family: "Staatliches", cursive;
-  font-size: 18px;
-}
-.forecast-word {
   color: #013d58;
   font-family: "Staatliches", cursive;
   font-size: 18px;
@@ -148,22 +152,6 @@ form {
   padding: 30px 0px 0px 0px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #1b2845;
-  background-image: linear-gradient(315deg, #72b9d5 0%, #285692 74%);
-}
-
 .select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -175,25 +163,25 @@ body {
 }
 
 .select {
-  width: 170px;
-  height: 40px;
-  cursor: pointer;
-  color: #ffffff;
-  border: none;
-  display: inline-block;
-  border-radius: 2px;
   align-items: center;
-  justify-content: center;
   background-color: #7f5a83;
-  background-image: linear-gradient(315deg, #eed3fd 0%, #7bc9e7 74%);
-  background-size: 200% 100%;
+  background-image: linear-gradient(315deg, #e2d4d3 0%, #3bb5e6 74%);
   background-position: left;
   background-repeat: no-repeat;
-  transition: 500ms;
-  margin: 2px;
-  font-weight: bold;
+  width: 170px;
+  background-size: 200% 100%;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
   font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  justify-content: center;
+  margin: 2px;
   opacity: 0.8;
+  transition: 500ms;
 }
 
 .select.go {
@@ -201,18 +189,18 @@ body {
 }
 
 .select:before {
-  content: "Brighten";
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 16px;
-  position: absolute;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
+  color: rgba(255, 255, 255, 0.5);
+  content: "Brighten";
   background-color: #ffffff;
   background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+  display: flex;
+  font-size: 16px;
+  height: 40px;
+  justify-content: center;
+  position: absolute;
   transition: 500ms;
+  width: 100px;
 }
 .select:hover {
   background-position: right;
@@ -226,6 +214,8 @@ body {
   outline: none;
 }
 
-#city-search {
-  margin-top: 20px;
+#current-temp,
+#wind-speed,
+#humidity {
+  font-weight: bold;
 }
