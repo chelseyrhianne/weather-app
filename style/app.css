@@ -1,7 +1,7 @@
 div {
   display: block;
   font-family: "Karla", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0 auto;
 }
 
@@ -9,23 +9,30 @@ h1 {
   color: #013d58;
   font-family: "Staatliches", cursive;
   font-size: 68px;
-  text-align: center;
   transition: all 200ms ease-in-out;
 }
 
 h1:hover {
   color: #0081bc;
 }
-
+h2 {
+  color: #013d58;
+  font-family: "Staatliches", cursive;
+  font-size: 18px;
+}
+h3 {
+  font-size: 16px;
+}
 hr {
   display: block;
   margin: 0 auto;
-  max-width: 32%;
+  max-width: 80%;
+  color: #cbf1ff;
 }
 
 form {
   padding: 6px 0px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {
@@ -41,6 +48,27 @@ a:hover {
 hr {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+form {
+  display: inline-block;
+  font-family: "Karla" cursive;
+  margin-top: 50px;
+}
+
+.search-bar {
+  width: 500px;
+  height: 40px;
+  margin: 5px;
+  border-color: #93b8db;
+  border-style: solid 1px;
+  opacity: 0.5;
+  background: #f7f9fc;
+  transition: all 200ms ease-in-out;
+}
+
+.search-bar:hover {
+  background: #ffffff;
 }
 
 .morning {
@@ -64,6 +92,7 @@ hr {
   background-size: cover;
   padding: 40px;
 }
+
 .container {
   background: #fff;
   border-radius: 15px;
@@ -73,47 +102,125 @@ hr {
   text-align: center;
   width: 900px;
 }
-#current-icon {
-  margin-top: 50px;
+
+.col-4 {
+  margin-bottom: 20px;
 }
-.current-word,
-.current-desc,
+.headings {
+  text-align: left;
+  padding-top: 20px;
+}
+
+.current-details {
+  text-align: right;
+  padding-top: 50px;
+  padding-right: 50px;
+}
+
+#current-temp,
+#wind-speed,
+#humidity {
+  font-weight: bold;
+}
+
+#current-desc {
+  color: #013d58;
+  font-family: "Staatliches", cursive;
+  font-size: 18px;
+}
 .forecast-word {
-  font-weight: bolder;
-  font-size: 16px;
+  color: #013d58;
+  font-family: "Staatliches", cursive;
+  font-size: 18px;
 }
 
 .row {
   line-height: 32px;
   margin: 0 auto;
   max-width: 800px;
-  padding: 5px 0px;
-}
-
-.current-temp,
-.current-min-max,
-.current-day,
-.current-time {
-  text-align: right;
-}
-
-.current-day,
-.current-temp,
-.current-time {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.current-details,
-.current-word,
-.current-desc {
-  text-align: left;
 }
 
 .footer {
   font-family: monospace;
   font-size: 11px;
-  padding: 30px 0px;
+  padding: 30px 0px 0px 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b2845;
+  background-image: linear-gradient(315deg, #72b9d5 0%, #285692 74%);
+}
+
+.select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.select {
+  width: 170px;
+  height: 40px;
+  cursor: pointer;
+  color: #ffffff;
+  border: none;
+  display: inline-block;
+  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #e7b7ec 0%, #72b9d5 74%);
+  background-size: 200% 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+  transition: 500ms;
+  margin: 2px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.select.go {
+  width: 40px;
+}
+
+.select:before {
+  content: "Brighten";
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  background-color: #ffffff;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+  transition: 500ms;
+}
+.select:hover {
+  background-position: right;
+}
+
+.select:hover:before {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.select:focus {
+  outline: none;
 }
 
 #city-search {

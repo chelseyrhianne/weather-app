@@ -31,38 +31,34 @@
   </head>
   <body>
     <div class="container">
-      <img src="" alt="" width="200" id="current-icon" />
-      <h1 id="current-city"></h1>
-      <div class="row">
-        <div class="col-6 current-day" id="current-day"></div>
-        <div class="col-6 current-word">currently</div>
-        <div class="col-6 current-time" id="current-time"></div>
-        <div class="col-6 current-desc" id="current-desc"></div>
-      </div>
-      <div class="row">
-        <div class="col-6 current-temp" id="current-temp"></div>
-        <div class="col-6 current-details">
-          wind <span id="wind-speed"></span>km/h
-        </div>
-        <div class="col-6 current-min-max" id="current-min-max"></div>
-        <div class="col-6 current-details">
-          humidity <span id="humidity"></span>%
-        </div>
-      </div>
-      <form id="city-search">
+       <form id="city-search">
         <input
           id="city-name"
           type="text"
           class="search-bar"
           autocomplete="off"
           placeholder="Search for a city"
-        />
-        <input type="submit" class="search-button" value="Go" />
+        /><input type="submit" class="search-button select go" value="Go" />
       </form>
-      <form id="current-loc">
-        <input type="submit" class="current-loc" value="Use current location" />
+      <form id="current-loc"> <input type="submit" class="current-loc select" value="Use current location" />
       </form>
       <hr />
+      <div class="row">
+        <div class="col-4">
+          <img src="" alt="" width="200" id="current-icon" />
+        </div>
+        <div class="col-4 headings">
+          <h1 id="current-city"></h1>
+           <h2 id="current-desc"></h2>
+          <h3>
+            Last updated: <span id="current-day"></span>, <span id="current-time"></span>
+          </h3>
+        </div>
+        <div class="col-4 current-details">
+        <div><span id="current-temp"></span> <span id="current-min-max"></span></div>
+        <div><span id="wind-speed"></span><strong>km/h</strong> wind</div>
+        <div><span id="humidity"></span><strong>%</strong> humidity</div> 
+      </div>
       <p class="forecast-word">forecast</p>
       <div id="forecast"></div>
       <p class="footer">
@@ -79,7 +75,7 @@
           target="_blank"
           >Chelsey Watson</a
         >
-      </p>
+        </p>
     </div>
     <script src="src/script.js"></script>
   </body>
