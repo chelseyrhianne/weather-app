@@ -73,7 +73,9 @@ hr {
   text-align: center;
   width: 900px;
 }
-
+#current-icon {
+  margin-top: 50px;
+}
 .current-word,
 .current-desc,
 .forecast-word {

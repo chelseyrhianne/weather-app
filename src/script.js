@@ -97,9 +97,10 @@ function showHumidity(response) {
 
 function showIcon(response) {
   let iconElement = document.querySelector("#current-icon");
+
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `src/icons/${response.data.weather[0].icon}.svg`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
@@ -124,9 +125,7 @@ function displayForecast(response) {
     <div class = "forecast-day"><strong>${formatForecastDay(
       forecastDay.dt
     )}</strong></div>
-    <img src="http://openweathermap.org/img/wn/${
-      forecastDay.weather[0].icon
-    }@2x.png" alt="" width="72"/>
+    <img src="src/icons/${forecastDay.weather[0].icon}.svg" alt="" width="72"/>
     <div class="forecast-temp"><strong>${Math.round(
       forecastDay.temp.day
     )}°</strong></div>
