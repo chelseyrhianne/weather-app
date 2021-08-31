@@ -165,7 +165,7 @@ a:hover {
 .select {
   align-items: center;
   background-color: #7f5a83;
-  background-image: linear-gradient(315deg, #4c6a92 0%, #1b2845 95%);
+  background-image: linear-gradient(315deg, #e2d4d3 0%, #3bb5e6 74%);
   background-position: left;
   background-repeat: no-repeat;
   width: 170px;
@@ -188,6 +188,20 @@ a:hover {
   width: 40px;
 }
 
+.select:before {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.5);
+  content: "Brighten";
+  background-color: #ffffff;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+  display: flex;
+  font-size: 16px;
+  height: 40px;
+  justify-content: center;
+  position: absolute;
+  transition: 500ms;
+  width: 100px;
+}
 .select:hover {
   background-position: right;
 }
